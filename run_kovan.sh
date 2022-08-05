@@ -1,0 +1,1 @@
+node checkCovalent.js -j nusic_nft_kovan -i 1 -n 0 -s 40
