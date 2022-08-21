@@ -1,5 +1,6 @@
 /**
  * JackyGu 2021-12-24
+ * cmd: node checkCovalent.js -j nusic_nft_kovan -i 1 -n 0 -s 40 -f 33048593 -t 33077990
  */
 const fs = require('fs');
 const { parseData} = require('./src/parseCovalentLogs.js');
