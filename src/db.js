@@ -70,11 +70,12 @@ const updateBuyDB = async (buyData) => {
 
 const updateCancelSaleDB = async (cancelData) => {
 	try {
-		const sql1 = `SELECT * from orders where auctionId = '${cancelData.auctionId}'`;
-		return connection.query(sql1, async function(error, data1, fields) {
-			if(data1.length == 0 || data1[0].cancelSale == 1) return false;
-			else {
-				const sql = `update orders set cancelSale = 1 where nftAddress = '${cancelData.nftAddress}' and auctionId = '${cancelData.auctionId}'`;
+		// const sql1 = `SELECT * from orders where auctionId = '${cancelData.auctionId}'`;
+		// return connection.query(sql1, async function(error, data1, fields) {
+		// 	if(data1.length == 0 || data1[0].cancelSale == 1) return false;
+		// 	else {
+				// const sql = `update orders set cancelSale = 1 where nftAddress = '${cancelData.nftAddress}' and auctionId = '${cancelData.auctionId}'`;
+				const sql = `delete from orders where nftAddress = '${cancelData.nftAddress}' and auctionId = '${cancelData.auctionId}'`;
 				return new Promise((resolve, reject) => {
 					connection.query(
 						sql,
@@ -87,8 +88,8 @@ const updateCancelSaleDB = async (cancelData) => {
 						}
 					)
 				})						
-			}
-		})
+		// 	}
+		// })
 	} catch(error) {
 		console.error(error);
 	}
