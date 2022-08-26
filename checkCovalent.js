@@ -41,7 +41,7 @@ const getData = async (web3, gameParams, contractId, blockNumber, range) => {
 		console.log("合约配置信息错误，请确认json文件配置是否正确");
 		return;
 	}
-	const _latestFromBlock = await client.get(`${gameParams.chainId}_height`);
+	const _latestFromBlock = await client.get(`${gameParams.chainId}_nusic_marketplace_height`);
 	if(range.fromBlock === undefined) range.fromBlock = _latestFromBlock - blockInterval;
 	if(range.toBlock === undefined) range.toBlock = blockNumber + blockInterval;
 	console.log(blockNumber + ': Check marketplace from height', range.fromBlock, 'to', range.toBlock);
@@ -64,7 +64,7 @@ const getData = async (web3, gameParams, contractId, blockNumber, range) => {
 					return;
 				}
 				if(data.data.items.length === 0) {
-					await client.set(`${gameParams.chainId}_height`, blockNumber);
+					await client.set(`${gameParams.chainId}_nusic_marketplace_height`, blockNumber);
 					return;
 				}
 				let parsedData = [];
@@ -96,7 +96,7 @@ const getData = async (web3, gameParams, contractId, blockNumber, range) => {
 				for(let i = 0; i < parsedData.length; i++) {
 					if(parsedData[i].action === 'updatePrice') await updatePriceSaleDB(parsedData[i]);
 				}
-				await client.set(`${gameParams.chainId}_height`, range.toBlock);
+				await client.set(`${gameParams.chainId}_nusic_marketplace_height`, range.toBlock);
 			}
 		});
 	} catch (e) {
@@ -110,7 +110,7 @@ const getNFTData = async (web3, gameParams, contractId, blockNumber, range) => {
 		console.log("合约配置信息错误，请确认json文件配置是否正确");
 		return;
 	}
-	const _latestFromBlock = await client.get(`${gameParams.chainId}_nft_height`);
+	const _latestFromBlock = await client.get(`${gameParams.chainId}_nusic_nft_height`);
 	if(range.fromBlock === undefined) range.fromBlock = _latestFromBlock - blockInterval;
 	if(range.toBlock === undefined) range.toBlock = blockNumber + blockInterval;
 	console.log(blockNumber + ': Check nft update from height', range.fromBlock, 'to', range.toBlock);
@@ -136,7 +136,7 @@ const getNFTData = async (web3, gameParams, contractId, blockNumber, range) => {
 				}
 				if(data.data.items.length === 0) {
 					// console.log("No events...")
-					await client.set(`${gameParams.chainId}_nft_height`, blockNumber);
+					await client.set(`${gameParams.chainId}_nusic_nft_height`, blockNumber);
 					return;
 				}
 				let parsedData = [];
@@ -190,7 +190,7 @@ const getNFTData = async (web3, gameParams, contractId, blockNumber, range) => {
 						await setTransferable(parsedData[i]);
 					}
 				}
-				await client.set(`${gameParams.chainId}_nft_height`, range.toBlock);
+				await client.set(`${gameParams.chainId}_nusic_nft_height`, range.toBlock);
 			}
 		})
 	} catch (e) {
@@ -246,7 +246,7 @@ if (options.json) {
 				blockNumber,
 				{
 					fromBlock:options.fromBlock, 
-					toBlock: options.toBlock,
+					// toBlock: options.toBlock,
 					pageNumber: options.pageNumber, 
 					pageSize: options.pageSize
 				}
@@ -258,7 +258,7 @@ if (options.json) {
 				blockNumber,
 				{
 					fromBlock:options.fromBlock, 
-					toBlock: options.toBlock,
+					// toBlock: options.toBlock,
 					pageNumber: options.pageNumber, 
 					pageSize: options.pageSize
 				}
@@ -274,7 +274,7 @@ if (options.json) {
 					blockNumber,
 					{
 						fromBlock:options.fromBlock, 
-						toBlock: options.toBlock,
+						// toBlock: options.toBlock,
 						pageNumber: options.pageNumber, 
 						pageSize: options.pageSize
 					}
@@ -286,7 +286,7 @@ if (options.json) {
 					blockNumber,
 					{
 						fromBlock:options.fromBlock, 
-						toBlock: options.toBlock,
+						// toBlock: options.toBlock,
 						pageNumber: options.pageNumber, 
 						pageSize: options.pageSize
 					}

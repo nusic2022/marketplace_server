@@ -3,7 +3,7 @@
 	"chainId": 42,
 	"gameName": "Nusic",
 	"contracts": [{
-		"contractAddress": "0x70822a88b4F787AFD1073Bbd5d800f344BFf0c3B",
+		"contractAddress": "0x6c6653b5718cdd469ab511ad42cca9ccb42941df",
 		"description": "marketplace logs",
 		"buy": {
 			"topic": "0xfc322eb9db8da39761bc016b6496a2966dad147beae75990391c6eae2d3168ef",
@@ -41,7 +41,7 @@
 				"value": 1
 			}, {
 				"key": "nftAddress",
-				"value": "0xa5135c6e3C796DEb1413456a536Cc1Bb25B7Ad9a"
+				"value": "0x99f66E4881D37E2E8ca5F8c4F426F1295f54d306"
 			}, {
 				"key": "nftType",
 				"value": "V1"
@@ -83,7 +83,7 @@
 				"value": 1
 			}, {
 				"key": "nftAddress",
-				"value": "0xa5135c6e3C796DEb1413456a536Cc1Bb25B7Ad9a"
+				"value": "0x99f66E4881D37E2E8ca5F8c4F426F1295f54d306"
 			}],
 			"dataTypes": ["address", "uint256", "uint256"],
 			"action": "sell"
@@ -104,7 +104,7 @@
 				"value": 1
 			}, {
 				"key": "nftAddress",
-				"value": "0xa5135c6e3C796DEb1413456a536Cc1Bb25B7Ad9a"
+				"value": "0x99f66E4881D37E2E8ca5F8c4F426F1295f54d306"
 			}, {
 				"key": "nftType",
 				"value": "V1"
@@ -148,7 +148,7 @@
 				"value": 1
 			}, {
 				"key": "nftAddress",
-				"value": "0xa5135c6e3C796DEb1413456a536Cc1Bb25B7Ad9a"
+				"value": "0x99f66E4881D37E2E8ca5F8c4F426F1295f54d306"
 			}, {
 				"key": "nftType",
 				"value": "V1"
@@ -170,7 +170,7 @@
 			"action": "updatePrice"
 		}
 	}, {
-		"contractAddress": "0xa5135c6e3C796DEb1413456a536Cc1Bb25B7Ad9a",
+		"contractAddress": "0x99f66E4881D37E2E8ca5F8c4F426F1295f54d306",
 		"description": "NFT mint, updateURI logs",
 		"transfer": {
 			"topic": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
