@@ -1,0 +1,240 @@
+{
+	"rpcUrl": "https://nd-582-910-664.p2pify.com/ab4e99535287b4aa6769bf3d089be1e4",
+	"chainId": 97,
+	"gameName": "Nusic",
+	"contracts": [{
+		"contractAddress": "0xE114a9f51E01653C1EE27237334ff702b3c9FFf0",
+		"description": "marketplace logs",
+		"buy": {
+			"topic": "0xfc322eb9db8da39761bc016b6496a2966dad147beae75990391c6eae2d3168ef",
+			"topicIndex": [{
+				"key": "topic", 
+				"value": 0
+			}, {
+				"key": "auctionId",
+				"value": 1,
+				"format": "hexToDec"
+			}, {
+				"key": "senderAddress",
+				"value": 3,
+				"format": "shortenAddress"
+			}],
+			"dataIndex": [{
+				"key": "tokenId", 
+				"value": 0,
+				"format": "toNumber"
+			}, {
+				"key": "paymentToken",
+				"value": 1
+			}, {
+				"key": "amount",
+				"value": 2,
+				"format": "fromWei"
+			}, {
+				"key": "dateTime",
+				"value": 3,
+				"format": "toNumber"
+			}],
+			"dataTypes": ["uint256", "address", "uint256", "uint256"],
+			"constants": [{
+				"key": "count",
+				"value": 1
+			}, {
+				"key": "nftAddress",
+				"value": "0xf43C615C68ef1b572809f937fcbd37eCd2327956"
+			}, {
+				"key": "nftType",
+				"value": "V1"
+			}], 
+			"action": "buy"
+		},	
+		"sell": {
+			"topic": "0xef7e978230ea86fb65602bfa27f8c39f0c0e4417f9c4a77880e7bc23d44b796c",
+			"topicIndex": [{
+				"key": "topic", 
+				"value": 0
+			}, {
+				"key": "auctionId",
+				"value": 1,
+				"format": "hexToDec"
+			}, {
+				"key": "senderAddress",
+				"value": 2,
+				"format": "shortenAddress"
+			}, {
+				"key": "tokenId",
+				"value": 3,
+				"format": "toNumber"
+			}],
+			"dataIndex": [{
+				"key": "paymentToken", 
+				"value": 0
+			}, {
+				"key": "amount",
+				"value": 1,
+				"format": "fromWei"
+			}, {
+				"key": "dateTime",
+				"value": 2,
+				"format": "toNumber"
+			}],
+			"constants": [{
+				"key": "count",
+				"value": 1
+			}, {
+				"key": "nftAddress",
+				"value": "0xf43C615C68ef1b572809f937fcbd37eCd2327956"
+			}],
+			"dataTypes": ["address", "uint256", "uint256"],
+			"action": "sell"
+		},
+		"cancel": {
+			"topic": "0x61b9399f2f0f32ca39ce8d7be32caed5ec22fe07a6daba3a467ed479ec606582",
+			"topicIndex": [{
+				"key": "topic",
+				"value": 0
+			}, {
+				"key": "auctionId",
+				"value": 1,
+				"format": "hexToDec"
+			}],
+			"dataIndex": [],
+			"constants": [{
+				"key": "count",
+				"value": 1
+			}, {
+				"key": "nftAddress",
+				"value": "0xf43C615C68ef1b572809f937fcbd37eCd2327956"
+			}, {
+				"key": "nftType",
+				"value": "V1"
+			},{
+				"key": "senderAddress",
+				"value": ""
+			}, {
+				"key": "tokenId",
+				"value": 0
+			}, {
+				"key": "paymentToken",
+				"value": ""
+			}, {
+				"key": "amount",
+				"value": ""
+			}, {
+				"key": "dateTime",
+				"format": "dtToTimestampFun",
+				"formatParam": "dtToTimestamp"
+			}],
+			"dataTypes": [],
+			"action": "cancel"
+		},
+		"updatePrice": {
+			"topic": "0x945c1c4e99aa89f648fbfe3df471b916f719e16d960fcec0737d4d56bd696838",
+			"topicIndex": [{
+				"key": "topic",
+				"value": 0
+			}, {
+				"key": "auctionId",
+				"value": 1,
+				"format": "hexToDec"
+			}],
+			"dataIndex": [{
+				"key": "amount",
+				"value": 0,
+				"format": "fromWei"
+			}],
+			"constants": [{
+				"key": "count",
+				"value": 1
+			}, {
+				"key": "nftAddress",
+				"value": "0xf43C615C68ef1b572809f937fcbd37eCd2327956"
+			}, {
+				"key": "nftType",
+				"value": "V1"
+			},{
+				"key": "senderAddress",
+				"value": ""
+			}, {
+				"key": "tokenId",
+				"value": 0
+			}, {
+				"key": "paymentToken",
+				"value": ""
+			}, {
+				"key": "dateTime",
+				"format": "dtToTimestampFun",
+				"formatParam": "dtToTimestamp"
+			}],
+			"dataTypes": ["uint256"],
+			"action": "updatePrice"
+		}
+	}, {
+		"contractAddress": "0xf43C615C68ef1b572809f937fcbd37eCd2327956",
+		"description": "NFT mint, updateURI logs",
+		"transfer": {
+			"topic": "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef",
+			"topicIndex": [{
+				"key": "topic",
+				"value": 0
+			}, {
+				"key": "transferFrom",
+				"value": 1,
+				"format": "shortenAddress"
+			}, {
+				"key": "transferTo",
+				"value": 2,
+				"format": "shortenAddress"
+			}, {
+				"key": "tokenId",
+				"value": 3,
+				"format": "hexToDec"
+			}],
+			"dataIndex": [],
+			"dataTypes": [],
+			"constants": [],
+			"action": "transfer"
+		},
+		"updateTokenURI": {
+			"topic": "0x0418254f69edc41d3d2b429767526234e99f60018e7e21cda80307bf3ef28cc4",
+			"topicIndex": [{
+				"key": "topic",
+				"value": 0
+			}, {
+				"key": "tokenId",
+				"value": 1,
+				"format": "hexToDec"
+			}],
+			"dataIndex": [{
+				"key": "uriBytes",
+				"value": 0,
+				"format": "toNumber"
+			}, {
+				"key": "uriLength",
+				"value": 1,
+				"format": "toNumber"
+			}, {
+        "key": "line1",
+        "value": 2,
+				"format": "decToString"
+      }, {
+        "key": "line2",
+        "value": 3,
+				"format": "decToString"
+      }, {
+        "key": "line3",
+        "value": 4,
+				"format": "decToString"
+			}],
+			"dataTypes": ["uint256", "uint256", "uint256", "uint256", "uint256"],
+			"constants": [],
+			"action": "updateTokenURI"
+		},
+		"setTransferable": {
+			"topicIndex": [{
+				"key": "topic",
+				"value": "0"
+			}]
+		}
+	}]
+}
