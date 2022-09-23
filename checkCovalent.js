@@ -36,7 +36,7 @@ const apiKey = process.env.COVALENT_API_KEY;
 
 const getData = async (web3, gameParams, contractId, blockNumber, range) => {
 	// fromBlock, toBlock, pageNumber = 0, pageSize = 10
-	console.log(gameParams.chainId);
+	// console.log(gameParams.chainId);
 	const params = gameParams.contracts[contractId];
 	if(params === undefined || params.contractAddress === undefined) {
 		console.log("合约配置信息错误，请确认json文件配置是否正确");
@@ -47,7 +47,7 @@ const getData = async (web3, gameParams, contractId, blockNumber, range) => {
 	if(range.toBlock === undefined) range.toBlock = blockNumber + blockInterval;
 	console.log(blockNumber + ': Check marketplace from height', range.fromBlock, 'to', range.toBlock);
 	const url = `https://api.covalenthq.com/v1/${gameParams.chainId}/events/address/${params.contractAddress}/?quote-currency=USD&format=JSON&starting-block=${range.fromBlock}&ending-block=${range.toBlock}&page-number=${range.pageNumber}&page-size=${range.pageSize}&key=${apiKey}`;
-	console.log(url);
+	// console.log(url);
 	try {
 		request({
 			url,
@@ -116,7 +116,7 @@ const getNFTData = async (web3, gameParams, contractId, blockNumber, range) => {
 	if(range.toBlock === undefined) range.toBlock = blockNumber + blockInterval;
 	console.log(blockNumber + ': Check nft update from height', range.fromBlock, 'to', range.toBlock);
 	const url = `https://api.covalenthq.com/v1/${gameParams.chainId}/events/address/${params.contractAddress}/?quote-currency=USD&format=JSON&starting-block=${range.fromBlock}&ending-block=${range.toBlock}&page-number=${range.pageNumber}&page-size=${range.pageSize}&key=${apiKey}`;
-	console.log(url);
+	// console.log(url);
 
 	try {
 		request({
